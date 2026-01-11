@@ -9,7 +9,7 @@ class AuthPage:
         self.driver.get("https://www.saucedemo.com/")
 
     def auth(self, username, password):
-        # Ввести пароль и логин
+        # Ввести пароль и логин.
         self.driver.find_element(By.ID, "user-name").send_keys(username)
         self.driver.find_element(By.ID, "password").send_keys(password)
         self.driver.find_element(By.ID, "login-button").click()

@@ -6,5 +6,5 @@ class CartPage:
         self.driver = driver
 
     def go_to_checkout(self):
-        # Нажать кнопку Checkout
+        # Нажать кнопку Checkout.
         self.driver.find_element(By.ID, "checkout").click()

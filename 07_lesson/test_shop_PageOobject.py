@@ -29,7 +29,8 @@ def test_complete_purchase():
     total_amount = checkout_page.get_total_amount()
 
     expected_total = "58.29"
-    assert total_amount == expected_total, f"Итоговая сумма {total_amount} не равна ожидаемой {expected_total}"
+    assert total_amount == expected_total, \
+        f"Итоговая сумма {total_amount} не равна ожидаемой {expected_total}"
 
     print(f"Тест пройден успешно! Итоговая сумма: ${total_amount}")
 

@@ -6,7 +6,7 @@ class MaineShopPage:
         self.driver = driver
 
     def add_cart(self):
-        # Добавить в корзину нужные товары
+        # Добавить в корзину нужные товары.
         self.driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
         self.driver.find_element(By.ID, "add-to-cart-sauce-labs-bolt-t-shirt").click()
         self.driver.find_element(By.ID, "add-to-cart-sauce-labs-onesie").click()

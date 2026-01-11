@@ -7,7 +7,7 @@ class CalculatorPage:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 45)
-        # Локаторы
+        # Локаторы.
         self.delay_input = (By.CSS_SELECTOR, "#delay")
         self.result_display = (By.CSS_SELECTOR, ".screen")
         # Кнопки
