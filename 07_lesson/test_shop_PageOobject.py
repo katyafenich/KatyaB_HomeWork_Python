@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from authorization_page import AuthPage
-from maine_shop_page import MaineShopPage
+from main_shop_page import MainShopPage
 from cart_page import CartPage
 from checkout_page import CheckoutPage
 
@@ -13,12 +13,11 @@ def driver():
     driver.quit()
 
 
-def test_complete_purchase():
-    driver = webdriver.Firefox()
+def test_complete_purchase(driver):
     auth = AuthPage(driver)
     auth.auth("standard_user", "secret_sauce")
 
-    maine_page = MaineShopPage(driver)
+    maine_page = MainShopPage(driver)
     maine_page.add_cart()
 
     cart_page = CartPage(driver)

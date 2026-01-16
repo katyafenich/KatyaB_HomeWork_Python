@@ -10,12 +10,10 @@ def driver():
     driver.quit()
 
 
-def test_calculator():
-    driver = webdriver.Chrome()
+def test_calculator(driver):
     calculator_page = CalculatorPage(driver)
-
     (calculator_page.open
-     ("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"))
+    ("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"))
 
     calculator_page.set_delay(45)
 
