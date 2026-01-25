@@ -2,7 +2,7 @@ import requests
 import pytest
 
 base_url = "https://ru.yougile.com/api-v2"
-api_key = "PrpY8D9RtZYkrLKGXHiztCAqsmiwEhkEnIR5tAx+g6wXVJCzhYJYQ0UYsAKiVolr"
+api_key = ""
 my_headers = {
     "Authorization": f'Bearer {api_key}',
     "Content-Type": "application/json"
