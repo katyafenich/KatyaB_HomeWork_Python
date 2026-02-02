@@ -14,9 +14,8 @@ class Student(Base):
     education_form = Column(String)
     subject_id = Column(Integer)
 
-
-def __repr__(self):
-    return f"<Student(user_id={self.user_id}, level='{self.level}')>"
+    def __repr__(self):
+        return f"<Student(user_id={self.user_id}, level='{self.level}')>"
 
 
 DATABASE_URL = "postgresql://postgres:12344321@localhost:5432/QA"

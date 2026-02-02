@@ -35,8 +35,11 @@ def test_create_student(db_session: Session, unique_user_id: int):
     db_session.add(new_student)
     db_session.commit()
 
-    student_from_db = (db_session.query(Student).filter
-                       (Student.user_id == unique_user_id).first())
+    student_from_db = (
+        db_session.query(Student)
+        .filter(Student.user_id == unique_user_id)
+        .first()
+    )
 
     assert student_from_db is not None
     assert student_from_db.user_id == unique_user_id
@@ -55,13 +58,16 @@ def test_edit_student(db_session: Session, unique_user_id: int):
     db_session.add(student_to_update)
     db_session.commit()
 
-    (db_session.query(Student).filter(Student.user_id == unique_user_id).update({
-        "level": "Pre-Intermediate"
-    }))
+    (db_session.query(Student)
+     .filter(Student.user_id == unique_user_id)
+     .update({"level": "Pre-Intermediate"}))
     db_session.commit()
 
-    updated_student = (db_session.query(Student).filter
-                       (Student.user_id == unique_user_id).first())
+    updated_student = (
+        db_session.query(Student)
+        .filter(Student.user_id == unique_user_id)
+        .first()
+    )
 
     assert updated_student.level == "Pre-Intermediate"
     assert updated_student.education_form == "group"
@@ -78,14 +84,22 @@ def test_delete_student(db_session: Session, unique_user_id: int):
     db_session.add(student_to_delete)
     db_session.commit()
 
-    student_before = (db_session.query(Student).filter
-                      (Student.user_id == unique_user_id).first())
+    student_before = (
+        db_session.query(Student)
+        .filter(Student.user_id == unique_user_id)
+        .first()
+    )
     assert student_before is not None
 
-    (db_session.query(Student).filter
-     (Student.user_id == unique_user_id).delete())
+    (db_session.query(Student)
+     .filter(Student.user_id == unique_user_id)
+     .delete()
+     )
     db_session.commit()
 
-    student_after = (db_session.query(Student).filter
-                     (Student.user_id == unique_user_id).first())
+    student_after = (
+        db_session.query(Student)
+        .filter(Student.user_id == unique_user_id)
+        .first()
+    )
     assert student_after is None
